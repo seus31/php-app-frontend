@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - ./frontend:/app
+      - app-node-modules:/app/node_modules
+    ports:
+      - "${EXPOSE_APP_PORT}:3000"
+
+volumes:
+  app-node-modules:
