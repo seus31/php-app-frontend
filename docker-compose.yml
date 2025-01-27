@@ -5,9 +5,18 @@ services:
       dockerfile: ./docker/Dockerfile
     volumes:
       - ./frontend:/app
-      - app-node-modules:/app/node_modules
+      - php-app-frontend-node-modules:/app/node_modules
+    networks:
+      - php-app-frontend-network
     ports:
       - "${EXPOSE_APP_PORT}:3000"
 
+networks:
+  php-app-frontend-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.45.1.0/24
+
 volumes:
-  app-node-modules:
+  php-app-frontend-node-modules:
