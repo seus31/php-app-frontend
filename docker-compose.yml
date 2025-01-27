@@ -16,7 +16,7 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.45.1.0/24
+        - subnet: 172.35.0.0/24
 
 volumes:
   php-app-frontend-node-modules:
