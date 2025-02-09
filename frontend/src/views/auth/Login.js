@@ -5,8 +5,8 @@ import { useApi } from '../../providers/ApiContext'
 import { useAuth } from '../../providers/AuthContext'
 
 export default function Login() {
-  const apiUrl = useApi();
-  const apiEndpoint = apiUrl + '/login'
+  const api = useApi();
+  const apiEndpoint = api.authUrl + '/login'
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const { token, login, logout } = useAuth();

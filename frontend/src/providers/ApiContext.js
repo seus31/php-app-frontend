@@ -4,9 +4,9 @@ import React, { createContext, useContext } from 'react';
 const ApiContext = createContext(undefined);
 
 // ApiProviderコンポーネントの定義
-export const ApiProvider = ({ apiUrl, children }) => {
+export const ApiProvider = ({ authUrl, apiUrl, children }) => {
   return (
-    <ApiContext.Provider value={apiUrl}>
+    <ApiContext.Provider value={{apiUrl: apiUrl, authUrl: authUrl}}>
       {children}
     </ApiContext.Provider>
   );

@@ -9,10 +9,11 @@ import { ApiProvider } from "./providers/ApiContext";
 import { AuthProvider } from "./providers/AuthContext";
 
 const root = createRoot(document.getElementById("root"));
+const authUrl = process.env.REACT_APP_API_AUTH_URL
 const apiUrl = process.env.REACT_APP_API_BASE_URL
 
 root.render(
-  <ApiProvider apiUrl={apiUrl}>
+  <ApiProvider apiUrl={apiUrl} authUrl={authUrl}>
     <AuthProvider>
       <BrowserRouter>
         <Switch>

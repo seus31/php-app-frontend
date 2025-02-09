@@ -5,8 +5,8 @@ import {useApi} from "../../providers/ApiContext";
 import axios from "axios";
 
 export default function Register() {
-  const apiUrl = useApi();
-  const apiEndpoint = apiUrl + '/register'
+  const api = useApi();
+  const apiEndpoint = api.authUrl + '/register'
   const [ userName, setUserName ] = useState('');
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
