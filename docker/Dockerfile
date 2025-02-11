@@ -1,13 +1,10 @@
-FROM node:22-alpine
+FROM node:22.13.1-alpine
 
 WORKDIR /app
 
-COPY ./frontend/package.json ./
-COPY ./frontend .
+COPY ./src .
 
 RUN npm install
 
 
 EXPOSE 3000
-
-CMD ["npm", "run", "start"]

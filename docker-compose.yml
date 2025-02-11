@@ -4,12 +4,13 @@ services:
       context: .
       dockerfile: ./docker/Dockerfile
     volumes:
-      - ./frontend:/app
+      - ./src:/app
       - php-app-frontend-node-modules:/app/node_modules
     networks:
       - php-app-frontend-network
     ports:
       - "${EXPOSE_APP_PORT}:3000"
+    command: npm run dev
 
 networks:
   php-app-frontend-network:
